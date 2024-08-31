@@ -27,8 +27,11 @@
             
            
         }
+
         img{
-          object-fit: cover;
+          
+          width: 150px;
+          
         }
         .logo{
             width:100px;
@@ -38,6 +41,7 @@
             margin-bottom: 5px;
             object-fit: contain;
         }
+       
     
       
       .material-icons{
@@ -48,12 +52,17 @@
         opacity: 0.5;
         
       }
+      .cine{
+        width: 100%;
+        position: relative;
+      }
       .nav{
         
         background-color: whitesmoke;
         padding-top: 20px;
         position: fixed;
         width: 100%;
+        z-index: 1;
       }
       .button{
         vertical-align: top;
@@ -81,28 +90,159 @@
         vertical-align: top;
         opacity: 0.7;
       }
-      .movies1{
-        
-       display: flex;
-       gap: 30px;
-       margin-left: 200px;
-       margin-top: 50px;
-       
-      }
-      .cine{
-        width: 200px;
+      .img{
         border-radius: 10px;
-        vertical-align: top;
+        width: 200px;
+      height: 350px;
+      object-fit: cover;
       }
-      .cine-text{
-        height: 20px;
-        width: 60px;
-        position: absolute;
-        right: 100px;
-        background-color: red;
-        color: white;
-        border-radius: 3px;
+      
+       
+      .movies{
+            display: grid;
+            
+           
+           margin-top: 50px;
+           width: 60%;
+           row-gap: 50px;
+           column-gap: 40px;
+           margin-left: 15%;
+           
+           
+          
+         
+           
+           
+           
+        
+            grid-template-columns:repeat(4,1fr);
+            grid-auto-rows: auto;
+            
+            grid-template-areas:
+            "a b c d "
+            "e f g h";
+        }
+       
+        
+        img:nth-child(1){
+            grid-area: a;
+        }
+        img:nth-child(2){
+            grid-area: b;
+        }
+        img:nth-child(3){
+            grid-area: c;
+        }
+        img:nth-child(4){
+            grid-area: d;
+        }
+        img:nth-child(5){
+            grid-area: e;
+        }
+        img:nth-child(6){
+            grid-area: f;
+        }
+        img:nth-child(7){
+            grid-area: g;
+        }
+        img:nth-child(8){
+            grid-area: h;
+        }
+        .cine{
+          width: 100%;
+  position: relative;
+
+}
+
+.cine-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width:60px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 5px 0;
+  box-sizing: border-box;
+  border-radius: 10px 10px 0 0;
+}
+      
+      
+      @media screen and (width<1224px){
+        label{
+          display:none;
+        }
+        
       }
+      @media screen and (width<1156px){
+        .button{
+          display:none;
+        }}
+        @media screen and (width<1036px){
+        #hyd{
+          display:none;
+        }}
+        @media screen and (width<700px){
+          #box{
+            display: none;
+          }
+          
+
+        
+        }
+        @media screen and (width<650px){
+   
+     .nav{
+      height: 60px;
+     }
+     #nav2{
+      width: 100%;
+    }
+    .movies{
+      grid-template-columns: repeat(2,1fr);
+      grid-template-rows: repeat(4,auto);
+      grid-template-areas: 
+      "a b"
+      "c d"
+      "e f"
+      "g h";
+      width: 60%;
+      height: 100%;
+      margin-left: 20px;
+      
+    }
+   
+     
+
+       }
+       @media screen and (width<440px){
+        .movies{
+      grid-template-columns: repeat(1,1fr);
+      grid-template-rows: repeat(8,auto);
+      grid-template-areas: 
+      "a"
+      "b"
+      "c"
+      "d"
+      "e"
+      "f"
+      "g"
+      "h";
+      width: 40%;
+      height: 100%
+     
+
+       }
+     
+      }
+
+   
+
+      
+
+          
+        
+
       
     </style>
 </head>
@@ -124,54 +264,57 @@
         
 
     </div>
-    <div class="movies1">
-        <div>
-            <img src="./nani saturday.avif" alt="" class="cine">
-        </div>
-        <button class="cine-text" style="position: absolute; left: 200px; border: none" >Telugu</button>
-      
-        
-        <div>
-            <img src="./stree2.avif" alt="" class="cine">
-        </div>
-        <button class="cine-text" style="position: absolute; left: 430px; border: none">Hindi</button>
-      
-        <div>
-            <img src="./thangalam.avif" alt="" class="cine">
-        </div>
-        <button class="cine-text" style="position: absolute; right: 520px; border: none; width: 90px;">Telugu/Tamil</button>
-      
-        <div>
-            <img src="./aay.avif" alt="" class="cine">
-        </div>
-        <button class="cine-text" style="position: absolute; right: 312.7px; border: none">Telugu</button>
-      
-    </div>
-    <div class="movies1">
-      <div>
-          <img src="./crow.avif" alt="" class="cine">
-      </div>
-      <button class="cine-text" style="position: absolute; left: 200px; border: none;">English</button>
-      
-    
-      
-      <div>
-          <img src="./kungfu.avif" alt="" class="cine">
-      </div>
-      <button class="cine-text" style="position: absolute; left: 430px; border: none;">English</button>
-      
-      <div>
-          <img src="./insi.avif" alt="" class="cine">
-      </div>
-      <button class="cine-text" style="position: absolute; right: 542px; border: none; width: 60px;">English</button>
-      
-      <div>
-          <img src="./commit.avif" alt="" class="cine">
-      </div>
-      <button class="cine-text" style="position: absolute; right: 312.7px; border: none">Telugu</button>
-      
-  </div>
-    
+    <div class="movies">
+       <div class="cine">
+      <img src="./aay.avif" alt="" class="img">
+      <div class="cine-text">Telugu</div>
+     </div>
+     
+  
+  <div class="cine">
+    <img src="./nani saturday.avif" alt="" class="img">
+    <div class="cine-text">Telugu</div>
+   </div>
+   
+
+<div class="cine">
+  <img src="./stree2.avif" alt="" class="img">
+  <div class="cine-text">Hindi</div>
+ </div>
+ 
+
+<div class="cine">
+  <img src="./insi.avif" alt="" class="img">
+  <div class="cine-text">English</div>
+ </div>
+ 
+
+<div class="cine">
+  <img src="./kungfu.avif" alt="" class="img">
+  <div class="cine-text">English</div>
+ </div>
+ 
+
+<div class="cine">
+  <img src="./commit.avif" alt="" class="img">
+  <div class="cine-text">Telugu</div>
+ </div>
+ 
+
+<div class="cine">
+  <img src="./crow.avif" alt="" class="img">
+  <div class="cine-text">English</div>
+ </div>
+ 
+
+<div class="cine">
+  <img src="./thangalam.avif" alt="" class="img">
+  <div class="cine-text">Tamil</div>
+ </div>
+ 
+
+   
+   
 
 
 
